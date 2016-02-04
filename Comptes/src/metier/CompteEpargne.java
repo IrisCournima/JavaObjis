@@ -1,13 +1,11 @@
 package metier;
 
-
-
 public class CompteEpargne extends Compte {
-	
-	//attributs
+
+	// attributs
 	private float taux;
-	
-	//geters&setters
+
+	// geters&setters
 	public float getTaux() {
 		return taux;
 	}
@@ -15,29 +13,23 @@ public class CompteEpargne extends Compte {
 	public void setTaux(float taux) {
 		this.taux = taux;
 	}
-		
-	//Constructor
+
+	// Constructor
 
 	public CompteEpargne(float soldeInitial, float taux) {
 		super(soldeInitial);
 		this.taux = taux;
 	}
 
-	//Méthodes
+	// Méthodes
 	@Override
 	public String toString() {
 		return "CompteEpargne [solde=" + solde + "]";
 	}
-	public void calculInterets(){
-		float interets = (this.solde* this.taux)/100;
+
+	public void calculInterets() {
+		float interets = (this.solde * this.taux) / 100;
 		System.out.println(interets);
 	}
-
-
-
-
-
-
-	
 
 }

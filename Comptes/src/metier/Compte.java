@@ -1,4 +1,5 @@
 package metier;
+
 /**
  * 
  * @author niniachel
@@ -10,7 +11,8 @@ public class Compte {
 	private int code;
 	protected float solde;
 	private int nbComptes;
-
+	private  static int nbCompte;
+	
 	// constructeur
 	public Compte(float soldeInitial) {
 		super();
@@ -46,28 +48,38 @@ public class Compte {
 		this.nbComptes = nbComptes;
 	}
 	
+	public static int getNbCompte() {
+		return nbCompte;
+	}
+
+	public static void setNbCompte(int nbCompte) {
+		Compte.nbCompte = nbCompte;
+	}
+
 	// méthodes
 	/**
 	 * retirer: soustraire une somme du solde
+	 * 
 	 * @param mt
 	 */
 	public void retirer(float mt) {
 		if (mt < 0) {
 			System.out.println("[ERROR]:erreur de montant, montant négatif");
-		}else{
+		} else {
 			this.solde -= mt;
 		}
-		
+
 	}
 
 	/**
 	 * verser: ajouter une somme au solde
+	 * 
 	 * @param mt
 	 */
 	public void verser(float mt) {
-		if (mt<0) {
+		if (mt < 0) {
 			System.out.println("[ERROR]:erreur de montant, montant négatif");
-		}else {
+		} else {
 			this.solde += mt;
 		}
 	}
@@ -78,7 +90,5 @@ public class Compte {
 	}
 
 
-
-	
 
 }
